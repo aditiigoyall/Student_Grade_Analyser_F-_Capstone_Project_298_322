@@ -19,7 +19,7 @@ let getGrade marks =
     | m when m >= 40.0 -> "D"
     | _ -> "F"  // Default grade if marks are below 40
 
-// Create a list containing student records
+// list containing student records
 let students = [
     { Name = "Aditi"; Marks = 92.0 }
     { Name = "Rahul"; Marks = 76.0 }
@@ -49,19 +49,18 @@ let showStudents () =
             s.Name s.Marks (getGrade s.Marks) result
     )
 
-// Calculate the average marks of all students
 let average =
     students |> List.averageBy (fun s -> s.Marks)
 
-// Find the student with the highest marks
+
 let topper =
     students |> List.maxBy (fun s -> s.Marks)
 
-// Filter students who have passed
+
 let passed =
     students |> List.filter (fun s -> s.Marks >= 40.0)
 
-// Filter students who have failed
+
 let failed =
     students |> List.filter (fun s -> s.Marks < 40.0)
 
